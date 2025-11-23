@@ -1,0 +1,22 @@
+# Dependências
+node_modules/
+npm-debug.log*
+
+# Ambientes e chaves
+.env
+.env.local
+.env.*.local
+
+# Arquivos de build
+.vercel/
+dist/
+build/
+
+# IDE e sistema
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

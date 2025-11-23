@@ -1,3 +1,5 @@
+// SERVER-SIDE/N3/backend/models/proprietarioModel.js
+
 const { supabase } = require("../config/ormClient");
 
 async function createProprietario({ nome, cpf, telefone }) {

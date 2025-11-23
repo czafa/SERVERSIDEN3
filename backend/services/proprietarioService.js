@@ -1,3 +1,5 @@
+// SERVER-SIDE/N3/backend/services/proprietarioService.js
+
 const proprietarioModel = require("../models/proprietarioModel");
 
 async function criarProprietario(dados) {

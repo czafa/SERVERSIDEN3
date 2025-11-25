@@ -24,6 +24,35 @@ async function login(req, res) {
   }
 }
 
+// POST do registro de users
+async function registrar(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Método não permitido" });
+  }
+
+  try {
+    const { nome, email, senha, role } = req.body;
+
+    if (!nome || !email || !senha || !role) {
+      return res
+        .status(400)
+        .json({ error: "nome, email, senha e role são obrigatórios" });
+    }
+
+    const usuario = await authService.registrarUsuario({
+      nome,
+      email,
+      senha,
+      role,
+    });
+
+    return res.status(201).json(usuario);
+  } catch (error) {
+    console.error("Erro registrar authController:", error);
+    return res.status(400).json({ error: error.message });
+  }
+}
+
 module.exports = {
   login,
   registrar,

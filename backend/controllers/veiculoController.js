@@ -43,7 +43,7 @@ async function list(req, res) {
 }
 
 // GET /api/veiculo/porProprietario?id_proprietario=...
-async function listPordono(req, res) {
+async function listPorDono(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "não permitido" });
   }
@@ -62,7 +62,7 @@ async function listPordono(req, res) {
 }
 
 // GET /api/veiculo/porTipo?tipo=luxo
-async function listByType(req, res) {
+async function listPorTipo(req, res) {
   if (req.method !== "GET") {
     return res.status(405).json({ error: "Método não permitido" });
   }
@@ -73,7 +73,7 @@ async function listByType(req, res) {
     const lista = await veiculoService.obterVeiculosPorTipo(tipo);
     return res.status(200).json(lista);
   } catch (error) {
-    console.error("Erro listByType veiculoController:", error);
+    console.error("Erro list Por Tipo veiculoController:", error);
     return res.status(400).json({ error: error.message });
   }
 }
@@ -116,8 +116,8 @@ async function remove(req, res) {
 module.exports = {
   create,
   list,
-  listPordono,
-  listByType,
+  listPorDono,
+  listPorTipo,
   update,
   remove,
 };

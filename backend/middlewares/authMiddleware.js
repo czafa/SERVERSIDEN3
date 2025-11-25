@@ -1,3 +1,5 @@
+// SERVER-SIDE/N3/backend/middlewares/authMiddleware.js
+
 const { verificarToken } = require("../config/auth");
 
 function extrairToken(req) {

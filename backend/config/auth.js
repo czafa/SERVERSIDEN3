@@ -1,3 +1,5 @@
+// SERVER-SIDE/N3/backend/config/auth.js
+
 const jwt = require("jsonwebtoken");
 
 const JWT_SECRET = process.env.JWT_SECRET;

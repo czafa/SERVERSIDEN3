@@ -1,3 +1,5 @@
+// SERVER-SIDE/N3/backend/services/authService.js
+
 const bcrypt = require("bcryptjs");
 const usuarioModel = require("../models/usuarioModel");
 const { gerarToken } = require("../config/auth");
